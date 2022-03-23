@@ -16,12 +16,12 @@ export default function App() {
       });
   }, []);
 
-  console.log(bills);
+  //console.log(bills);
 
   return (
     <div>
       <BillsCast />
-      <BillCollection />
+      <BillCollection bills={bills} />
     </div>
   );
 }

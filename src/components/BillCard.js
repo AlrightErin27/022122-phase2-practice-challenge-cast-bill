@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const BillCard = ({ bill }) => {
+  // console.log(bill);
   return (
     <div className="ui column">
       <div
         className="ui card"
         key={bill.id}
-        onClick={() => console.log('add code to connect event listener')}
+        onClick={() => console.log("add code to connect event listener")}
       >
         <div className="image">
           <img alt={bill.name} src={bill.photo} />
@@ -35,7 +36,7 @@ const BillCard = ({ bill }) => {
               <button
                 className="ui mini blue button"
                 onClick={() =>
-                  console.log('add code to connect event listener')
+                  console.log("add code to connect event listener")
                 }
               >
                 FIRE
