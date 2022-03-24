@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-const BillCard = ({ bill, handleClick, handleFire }) => {
-  // console.log(bill);
+const BillCard = ({ bill, changeCastBoolean }) => {
+  //console.log(bill.isCast);
 
+  function handleClick() {
+    console.log("CLICKED:", bill.name, bill.id);
+    changeCastBoolean(bill);
+  }
   return (
     <div className="ui column">
-      <div
-        className="ui card"
-        key={bill.id}
-        onClick={() => {
-          handleClick(bill.id);
-        }}
-      >
+      <div className="ui card" key={bill.id}>
         <div className="image">
           <img alt={bill.name} src={bill.photo} />
         </div>
@@ -38,12 +36,11 @@ const BillCard = ({ bill, handleClick, handleFire }) => {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini blue button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleFire(bill.id);
-                }}
+                key={bill.id}
+                bill={bill}
+                onClick={handleClick}
               >
-                FIRE
+                {!bill.isCast ? "HIRE" : "FIRE"}
               </button>
             </div>
           </span>
